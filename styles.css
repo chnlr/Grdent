@@ -23,7 +23,7 @@
   }
   
   .container {
-    background-color: rgba(255, 255, 255, 0.1);  /* Transparent background */
+    background-color: rgba(233, 233, 233, 0.1);  /* Transparent background */
     backdrop-filter: blur(10px) brightness(0.8);  /* Glass effect with blur */
     padding: 20px;
     border-radius: 20px;
