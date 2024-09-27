@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #1f1c2c, #928DAB);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    margin: 0;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.1);  /* Transparent background */
+    backdrop-filter: blur(10px) brightness(0.8);  /* Glass effect with blur */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);  /* Soft shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* Light border for definition */
+    color: white;
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  h1 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  .picker-container {
+    display: flex;
+    justify-content: center;  /* Center the color pickers */
+    gap: 20px;  /* Add space between the two pickers */
+    margin-bottom: 20px;
+  }
+  
+  .color-picker {
+    width: 40px;  /* Adjust the size */
+    height: 40px;  /* Adjust the size */
+    border-radius: 50%;  /* Circular container */
+    overflow: hidden;
+  }
+  
+  input[type="color"] {
+    appearance: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 50%;  /* Ensures the color input is circular */
+    background: none;
+  }
+  
+  input[type="color"]::-webkit-color-swatch {
+    border: none;  /* Remove any default border */
+    border-radius: 50%;  /* Ensures swatch is circular */
+  }
+  
+  input[type="color"]::-moz-color-swatch {
+    border: none;  /* Remove any default border in Firefox */
+    border-radius: 50%;  /* Ensures swatch is circular */
+  }
+  
+  .angle-picker {
+    margin: 20px 0;
+  }
+  
+  input[type="range"] {
+    width: 70%;
+  }
+  
+  span#angleValue {
+    font-size: 14px;
+  }
+  
+  .button-container {
+    margin-bottom: 20px;
+  }
+  
+  button.action-button {
+    background: linear-gradient(135deg, #FF5733, #33B5FF);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+  }
+  
+  button.action-button:hover {
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.5);
+  }
+  
+  .gradient-preview {
+    width: 100%;
+    height: 150px;
+    border-radius: 15px;
+    margin: 20px 0;
+    background: linear-gradient(90deg, #FF5733, #33B5FF);
+  }
+  
+  textarea {
+    width: 100%;
+    height: 80px;
+    font-family: monospace;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  

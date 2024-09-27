@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Gradient Generator</h1>
+
+    <!-- Color Pickers -->
+    <div class="picker-container">
+      <div class="color-picker" id="color1-container">
+        <input type="color" id="color1" value="#ff5733" onchange="updateGradient()">
+      </div>
+
+      <div class="color-picker" id="color2-container">
+        <input type="color" id="color2" value="#33b5ff" onchange="updateGradient()">
+      </div>
+    </div>
+
+    <!-- Angle Picker (Slider) -->
+    <div class="angle-picker">
+      <label for="angle">Angle: </label>
+      <input type="range" id="angle" min="0" max="360" value="90" oninput="updateGradient()">
+      <span id="angleValue">90°</span>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-container">
+        <button class="action-button" onclick="downloadGradient()">Download</button>
+        <button class="action-button" onclick="downloadVideo()">Download Video</button>
+    </div>
+  
+
+    <!-- Preview Box -->
+    <div class="gradient-preview" id="preview"></div>
+
+    <!-- Canvas for Download -->
+    <canvas id="gradientCanvas" style="display: none;"></canvas>
+
+    <!-- CSS Code Display -->
+    <div class="code-container">
+      <h3>CSS Code:</h3>
+      <textarea id="cssCode" readonly></textarea>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
