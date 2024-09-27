@@ -55,4 +55,3 @@ function downloadGradient() {
   link.download = 'gradient.png';
   link.click();
 }
-
