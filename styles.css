@@ -1,130 +1,135 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
+body {
+    font-family: 'Rubik', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg, #1f1c2c, #928DAB);
-    background-size: 200% 200%;
-    animation: gradientAnimation 10s ease infinite;
     margin: 0;
-  }
-  
-  @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  .container {
-    background-color: rgba(233, 233, 233, 0.1);  /* Transparent background */
-    backdrop-filter: blur(10px) brightness(0.8);  /* Glass effect with blur */
+    transition: background 1s ease;  /* Smooth transition when background changes */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);  /* Soft shadow for depth */
-    border: 1px solid rgba(255, 255, 255, 0.2);  /* Light border for definition */
-    color: white;
-    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #333;
+    max-width: 400px;
     width: 100%;
     text-align: center;
-  }
-  
-  h1 {
-    font-weight: 500;
-    margin-bottom: 20px;
-    font-size: 20px;
-  }
-  
-  .picker-container {
+}
+
+.picker-container {
     display: flex;
-    justify-content: center;  /* Center the color pickers */
-    gap: 20px;  /* Add space between the two pickers */
+    justify-content: center;
+    gap: 15px;
     margin-bottom: 20px;
-  }
-  
-  .color-picker {
-    width: 40px;  /* Adjust the size */
-    height: 40px;  /* Adjust the size */
-    border-radius: 50%;  /* Circular container */
-    overflow: hidden;
-  }
-  
-  input[type="color"] {
+}
+
+.color-picker {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the color input fits within the circle */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="color"] {
     appearance: none;
     border: none;
     width: 100%;
     height: 100%;
+    cursor: pointer;
+    border-radius: 50%;  /* Ensures the input remains circular */
+    background: none;
     padding: 0;
     margin: 0;
-    cursor: pointer;
-    border-radius: 50%;  /* Ensures the color input is circular */
-    background: none;
-  }
-  
-  input[type="color"]::-webkit-color-swatch {
-    border: none;  /* Remove any default border */
-    border-radius: 50%;  /* Ensures swatch is circular */
-  }
-  
-  input[type="color"]::-moz-color-swatch {
-    border: none;  /* Remove any default border in Firefox */
-    border-radius: 50%;  /* Ensures swatch is circular */
-  }
-  
-  .angle-picker {
-    margin: 20px 0;
-  }
-  
-  input[type="range"] {
-    width: 70%;
-  }
-  
-  span#angleValue {
-    font-size: 14px;
-  }
-  
-  .button-container {
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;  /* Remove default border */
+    border-radius: 50%;  /* Ensure swatch is circular */
+}
+
+input[type="color"]::-moz-color-swatch {
+    border: none;
+    border-radius: 50%;  /* Ensure Firefox swatch is circular */
+}
+
+.gradient-preview {
+    width: 100%;
+    height: 150px;
+    border-radius: 15px;
     margin-bottom: 20px;
-  }
-  
-  button.action-button {
-    background: linear-gradient(135deg, #FF5733, #33B5FF);
+    background: linear-gradient(90deg, #ff5733, #33b5ff);
+    transition: background 0.5s ease;  /* Smooth transition for preview */
+}
+
+button.action-button {
+    background: linear-gradient(135deg, #ff5733, #33b5ff);  /* Default gradient before any selection */
+    background-size: 200% 200%;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 15px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 5px;
-  }
-  
-  button.action-button:hover {
+    transition: box-shadow 0.3s ease;
+    animation: buttonGradientAnimation 5s ease infinite;  /* Apply animation */
+}
+
+@keyframes buttonGradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+button.action-button:hover {
     box-shadow: 0 5px 15px rgba(255, 87, 51, 0.5);
-  }
-  
-  .gradient-preview {
-    width: 100%;
-    height: 150px;
-    border-radius: 15px;
-    margin: 20px 0;
-    background: linear-gradient(90deg, #FF5733, #33B5FF);
-  }
-  
-  textarea {
-    width: 100%;
-    height: 80px;
-    font-family: monospace;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
+}
+
+button.action-button:hover {
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.5);
+}
+
+/* Styling for the gradient type toggle buttons */
+.gradient-type-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toggle-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
     border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-button.active {
+    background-color: #33b5ff;
+    color: white;
+    box-shadow: 0 5px 15px rgba(51, 181, 255, 0.5);
+}
+
+.toggle-button:hover {
+    background-color: #ddd;
+}
+
+.angle-picker {
+    margin: 20px 0;
+    transition: opacity 0.3s ease;
+}
+
+.angle-picker[style="display: none;"] {
+    opacity: 0;
+    visibility: hidden;
+}
