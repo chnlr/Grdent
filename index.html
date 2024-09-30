@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1 id="title">🎨 Create Your Own Gradient</h1>
+    <!-- Header container -->
+    <header class="title-container">
+        <h1>Make A Gradient!</h1>
     </header>
-    
+
     <main class="container">
+        <!-- Gradient controls go here -->
         <section class="picker-container">
             <div class="color-picker">
                 <input type="color" id="color1" value="#ff5733" aria-label="Pick color 1" onchange="updateGradient()">
@@ -21,25 +23,30 @@
                 <input type="color" id="color2" value="#33b5ff" aria-label="Pick color 2" onchange="updateGradient()">
             </div>
         </section>
-        
+
+        <!-- Angle Slider -->
         <section class="angle-picker">
             <label for="angle">Angle: <span id="angleValue">90°</span></label>
             <input type="range" id="angle" min="0" max="360" value="90" oninput="updateGradient()">
         </section>
 
+        <!-- Size Slider for Radial Gradient -->
         <section class="size-picker">
             <label for="size">Radial Size:</label>
             <input type="range" id="size" min="5" max="50" value="25" oninput="updateGradient()">
         </section>
-        
+
+        <!-- Gradient Preview -->
         <section class="preview-container">
             <div id="preview" class="gradient-preview"></div>
         </section>
-        
+
+        <!-- Download Button -->
         <section class="controls">
             <button class="action-button" onclick="downloadGradient()">Download Gradient</button>
         </section>
-        
+
+        <!-- Gradient Type Toggle -->
         <section class="gradient-type-container">
             <label for="gradientType">Gradient Type:</label>
             <div class="toggle-buttons">

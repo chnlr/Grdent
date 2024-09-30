@@ -1,6 +1,8 @@
+/* Basic body styling */
 body {
     font-family: 'Rubik', sans-serif;
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -8,6 +10,25 @@ body {
     transition: background 1s ease;  /* Smooth transition when background changes */
 }
 
+/* Header container for title */
+.title-container {
+    background: rgba(255, 255, 255, 0.1); /* Light translucent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* Styling for the main container */
 .container {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -19,7 +40,6 @@ body {
     width: 100%;
     text-align: center;
 }
-
 .picker-container {
     display: flex;
     justify-content: center;
